@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="-Infinity" prefHeight="400.0" prefWidth="830.0" style="-fx-background-color: #191414;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.musicplayer.controller">
+    <children>
+        <Label layoutX="361.0" layoutY="14.0" text="Music Player" textFill="WHITE">
+            <font>
+                <Font name="Comic Sans MS" size="24.0" />
+            </font>
+        </Label>
+        <ProgressBar fx:id="songProgressBar" layoutX="7.0" layoutY="339.0" opacity="0.3" prefHeight="11.0" prefWidth="820.0" progress="0.0">
+            <effect>
+                <Lighting bumpInput="$null">
+                    <light>
+                        <Light.Distant>
+                            <color>
+                                <Color red="0.800000011920929" green="0.7614814639091492" blue="0.7614814639091492" />
+                            </color>
+                        </Light.Distant>
+                    </light>
+                </Lighting>
+            </effect>
+            <cursor>
+                <Cursor fx:constant="NONE" />
+            </cursor>
+        </ProgressBar>
+        <Button fx:id="backButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#backMedia" text="BACK" textFill="WHITE" />
+        <Button fx:id="nextButton" layoutX="761.0" layoutY="358.0" mnemonicParsing="false" onAction="#nextMedia" text="NEXT" textFill="WHITE" />
+        <Button fx:id="playButton" alignment="CENTER" layoutX="500.0" layoutY="358.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="25.0" prefWidth="59.0" text="PLAY" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="pauseButton" alignment="CENTER" layoutX="258.0" layoutY="360.0" mnemonicParsing="false" onAction="#pauseMedia" prefHeight="25.0" prefWidth="59.0" text="STOP" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </Button>
+        <Label fx:id="songLabel" layoutX="14.0" layoutY="311.0" text="NOW PLAYING" textFill="WHITE" />
+        <ListView fx:id="songList" fixedCellSize="-2.0" layoutX="27.0" layoutY="116.0" prefHeight="168.0" prefWidth="404.0" style="-fx-background-color: #333333;;">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor></ListView>
+        <TextField fx:id="searchBar" layoutX="313.0" layoutY="86.0" opacity="0.79" prefHeight="25.0" prefWidth="118.0" promptText="Search" />
+        <ListView fx:id="favList" fixedCellSize="-2.0" layoutX="458.0" layoutY="116.0" prefHeight="168.0" prefWidth="126.0" style="-fx-background-color: #333333;;">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </ListView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="81.0" prefHeight="35.0" prefWidth="72.0" text="Songs" textFill="WHITE">
+            <font>
+                <Font name="Comic Sans MS" size="18.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="458.0" layoutY="81.0" prefHeight="35.0" prefWidth="72.0" text="Liked" textFill="WHITE">
+            <font>
+                <Font name="Comic Sans MS" size="18.0" />
+            </font>
+        </Label>
+        <ListView fx:id="playList" fixedCellSize="-2.0" layoutX="617.0" layoutY="116.0" prefHeight="168.0" prefWidth="198.0" style="-fx-background-color: #333333;;">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </ListView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="617.0" layoutY="81.0" prefHeight="35.0" prefWidth="72.0" text="Playlists" textFill="WHITE">
+            <font>
+                <Font name="Comic Sans MS" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="createPlaylist" layoutX="783.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleCreatePlaylist" text="+" />
+        <Button fx:id="refreshView" layoutX="251.0" layoutY="86.0" mnemonicParsing="false" onAction="#refreshSongList" text="Refresh" />
+      <Button fx:id="sortAlphabeticalOrder" layoutX="125.0" layoutY="86.0" mnemonicParsing="false" onAction="#sortAlphabeticalOrder" text="A" />
+      <Button fx:id="sortReverseAlphabeticalOrder" layoutX="161.0" layoutY="86.0" mnemonicParsing="false" onAction="#sortReverseAlphabeticalOrder" text="RA" />
+      <Button fx:id="sortShuffle" layoutX="206.0" layoutY="86.0" mnemonicParsing="false" onAction="#sortShuffle" text="S" />
+      <Button fx:id="like" layoutX="777.0" layoutY="307.0" mnemonicParsing="false" onAction="#likeMedia" text="Like" />
+    </children>
+</Pane>
